@@ -1,7 +1,7 @@
 
-<div class="pos-r block" #container style="position: relative;width: 1000px; height: 500px; background:yellow;">
+<div class="pos-r block" #container class="container">
   <ng-container *ngFor="let item of [1,2,3,4,5];">
-    <div style="position: absolute; width:50px; height: 50px; background: blue;"
+    <div class="area"
       ngx-hm-draggable
       [hm-draggable-container]="container"
       (dragComplete)="dragComplete($event)"

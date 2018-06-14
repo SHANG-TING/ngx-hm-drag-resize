@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "ngx-hm-drag-resize": {
+      "root": "projects/ngx-hm-drag-resize",
+      "sourceRoot": "projects/ngx-hm-drag-resize/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-hm-drag-resize/tsconfig.lib.json",
+            "project": "projects/ngx-hm-drag-resize/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-hm-drag-resize/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-hm-drag-resize/src/test.ts",
+            "tsConfig": "projects/ngx-hm-drag-resize/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-hm-drag-resize/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-hm-drag-resize/tsconfig.lib.json",
+              "projects/ngx-hm-drag-resize/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-hm-draggable-resizable"
